@@ -35,9 +35,9 @@ class DoLogin extends BaseAction
         $password   =   (isset($data['password'])) ?: $this->request->input('password');
 
         if(!Auth::attempt(['email' => $email, 'password' => $password])) {
-            return response()->json([
-                'message' => 'Unauthorized'
-            ], 401);
+            return [
+                'error' => 'ایمیل یا پسورد اشتباه است.',
+            ];
         }
 
         $user = $this->request->user();
