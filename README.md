@@ -1,5 +1,1 @@
-# guide
-Accounting System
-
-
-Guide is a personal accounting system based on IRR.
+A personal project to help myself to managing my money
