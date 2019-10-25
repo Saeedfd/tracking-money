@@ -104,7 +104,7 @@ class AuthenticationController extends Controller
             return $this->returner->failureReturner(
                 400,
                 10004,
-                $result['error'],
+                $result['message'],
                 null
             );
         }

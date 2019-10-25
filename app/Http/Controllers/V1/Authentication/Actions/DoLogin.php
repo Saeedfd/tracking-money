@@ -36,7 +36,8 @@ class DoLogin extends BaseAction
 
         if(!Auth::attempt(['email' => $email, 'password' => $password])) {
             return [
-                'error' => 'ایمیل یا پسورد اشتباه است.',
+                'error' => "Unauthorized",
+                'message' => 'ایمیل یا پسورد اشتباه است.',
             ];
         }
 
