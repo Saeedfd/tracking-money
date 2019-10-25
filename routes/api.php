@@ -13,10 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::group([
     'prefix'     => 'auth',
     'namespace'  => 'V1\Authentication',
@@ -35,4 +31,12 @@ Route::group([
     'expires'    => 1
 ], function () {
     Route::get('logout', 'AuthenticationController@logout');
+});
+
+Route::group([
+    'prefix'     => 'accounts',
+    'namespace'  => 'V1\Accounts',
+    'middleware' => 'auth:api'
+], function () {
+    Route::post('/create', 'AccountsController@createAccount');
 });
