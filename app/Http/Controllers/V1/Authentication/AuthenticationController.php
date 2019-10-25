@@ -71,6 +71,20 @@ class AuthenticationController extends Controller
 
     }
 
+    /**
+     * @api {post} api/auth/login Login User
+     * @apiName Login User
+     * @apiGroup Authentication
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} email     User Email.
+     * @apiParam {String} password  User Password.
+     *
+     * @apiSuccess {String} message     Message of successfully login.
+     * @apiSuccess {Integer} user_id    User ID.
+     * @apiSuccess {String} name        User Name.
+     * @apiSuccess {String} token       User Token.
+     */
     public function login(DoLogin $user)
     {
 
@@ -103,6 +117,17 @@ class AuthenticationController extends Controller
 
     }
 
+
+    /**
+     * @api {get} api/auth/logout Logout User
+     * @apiName Logout User
+     * @apiGroup Authentication
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} token     User token.
+     *
+     * @apiSuccess {String} message     Message of successfully logout.
+     */
     public function logout(DoLogout $user)
     {
 
