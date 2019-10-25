@@ -1,10 +1,10 @@
 {
-  "name": "Guide Project Developers Document",
+  "name": "Money Tracking Project Developers Document",
   "version": "1.0.0",
   "description": "",
-  "title": "Guide API Document",
-  "url": "http://guide.saeed.pw",
-  "sampleUrl": "http://guide.saeed.pw",
+  "title": "Money Tracking API Document",
+  "url": "http://mt.saeed.pw",
+  "sampleUrl": "http://mt.saeed.pw",
   "header": {
     "title": "Introduction",
     "filename": "header.md"
