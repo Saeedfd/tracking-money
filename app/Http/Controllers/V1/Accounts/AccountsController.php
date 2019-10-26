@@ -24,6 +24,22 @@ class AccountsController extends Controller
         $this->returner = $returner;
     }
 
+
+    /**
+     * @api {post} api/accounts/ Create Account
+     * @apiName Create Account
+     * @apiGroup Accounts
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} token     User token.
+     * @apiParam {String} description  Account Description.
+     * @apiParam {String} name      Account Name.
+     *
+     * @apiSuccess {String} message     Message of successfully created account.
+     * @apiSuccess {Integer} id         Account ID.
+     * @apiSuccess {String} name        Account Name.
+     * @apiSuccess {String} description       Account Description.
+     */
     public function createAccount(CreateAccount $account)
     {
         // Do Validating
@@ -54,6 +70,19 @@ class AccountsController extends Controller
         );
     }
 
+
+    /**
+     * @api {edit} api/accounts/{id} Edit Account
+     * @apiName Edit Account
+     * @apiGroup Accounts
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} token     User token.
+     * @apiParam {String} description  Account Description.
+     * @apiParam {String} name      Account Name.
+     *
+     * @apiSuccess {String} message     Message of successfully edit account.
+     */
     public function editAccount(EditAccount $account, $id)
     {
         // Do Validating
@@ -84,6 +113,16 @@ class AccountsController extends Controller
         );
     }
 
+    /**
+     * @api {delete} api/accounts/{id} Remove Account
+     * @apiName Remove Account
+     * @apiGroup Accounts
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} token     User token.
+     *
+     * @apiSuccess {String} message     Message of successfully deleted account.
+     */
     public function removeAccount(RemoveAccount $account, $id)
     {
         // Do Validating
@@ -114,6 +153,20 @@ class AccountsController extends Controller
         );
     }
 
+    /**
+     * @api {get} api/accounts/ Get Accounts
+     * @apiName Get Accounts
+     * @apiGroup Accounts
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} token     User token.
+     *
+     * @apiSuccess {String} message     true.
+     * * array of accounts
+     * @apiSuccess {Integer} id         Account ID.
+     * @apiSuccess {String} name        Account Name.
+     * @apiSuccess {String} description       Account Description.
+     */
     public function getAccounts(GetAllAccounts $accounts)
     {
         // Do Validating
