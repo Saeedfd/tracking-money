@@ -38,5 +38,8 @@ Route::group([
     'namespace'  => 'V1\Accounts',
     'middleware' => 'auth:api'
 ], function () {
-    Route::post('/create', 'AccountsController@createAccount');
+    Route::get('/', 'AccountsController@getAccounts');
+    Route::post('/', 'AccountsController@createAccount');
+    Route::put('/{id}', 'AccountsController@editAccount');
+    Route::delete('/{id}', 'AccountsController@removeAccount');
 });
