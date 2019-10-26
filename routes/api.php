@@ -43,3 +43,11 @@ Route::group([
     Route::put('/{id}', 'AccountsController@editAccount');
     Route::delete('/{id}', 'AccountsController@removeAccount');
 });
+
+Route::group([
+    'prefix'     => 'transactions',
+    'namespace'  => 'V1\Transactions',
+    'middleware' => 'auth:api'
+], function () {
+    Route::post('/', 'TransactionsController@submitTransactions');
+});
